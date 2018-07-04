@@ -76,15 +76,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
                     ug.MapRightKey("GrupoID");         // RIGHT eh classe q está sendo ligada   
                 });
 
-            this.HasMany<Curso>(c => c.Cursos)
-                .WithMany(t => t.Usuarios)
-                .Map(uc =>
-                {
-                    uc.ToTable("Usuario_Cursos");      // Nome da tabela de ligacao
-                    uc.MapLeftKey("UsuarioID");        // LEFT eh a classe atual
-                    uc.MapRightKey("CursoID");         // RIGHT eh classe q está sendo ligada   
-                });
-
             this.HasMany<Habilitacao>(c => c.Habilitacoes)
                 .WithMany(t => t.Usuarios)
                 .Map(uh =>

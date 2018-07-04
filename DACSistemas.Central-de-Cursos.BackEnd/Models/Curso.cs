@@ -7,7 +7,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
     {
         public Curso()
         {
-            Usuarios = new List<Usuario>();
+            UsuarioCurso = new List<UsuarioCurso>();
             Agendas = new List<Agenda>();
         }
 
@@ -24,7 +24,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
         public bool? Apagado { get; set; }
 
         // Virtual Properties
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<UsuarioCurso> UsuarioCurso { get; set; }
         public virtual ICollection<Agenda> Agendas { get; set; }
 
 

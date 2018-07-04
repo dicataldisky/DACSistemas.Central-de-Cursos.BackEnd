@@ -21,6 +21,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
         {
             var data = _context.Usuarios
                 .Include(e => e.Enderecos)
+                .Include(e => e.UsuarioCurso.Select(s => s.Curso))
                 .Select(x => new ListUsuarioViewModel
                 {
                     UsuarioID = x.UsuarioID,
@@ -49,7 +50,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                         Descricao = g.Descricao,
                         Instrutor = g.Instrutor
                     }).ToList(),
-                    Cursos = x.Cursos.Select(c => new ListCursoViewModel
+                    Cursos = x.UsuarioCurso.Select(a => a.Curso).Select(c => new ListCursoViewModel
                     {
                         CursoID = c.CursoID,
                         Nome = c.Nome,
