@@ -142,6 +142,7 @@
     <Compile Include="Context\Mappings\EnderecoMap.cs" />
     <Compile Include="Context\Mappings\GrupoMap.cs" />
     <Compile Include="Context\Mappings\HabilitacaoMap.cs" />
+    <Compile Include="Context\Mappings\UsuarioCursoMap.cs" />
     <Compile Include="Context\Mappings\UsuarioMap.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Models\Habilitacao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\OAuth\AuthorizationServerProvider.cs" />
+    <Compile Include="Models\UsuarioCurso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CursoRepository.cs" />
     <Compile Include="Repositories\EnderecoRepository.cs" />
@@ -214,7 +216,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53376</DevelopmentServerPort>
+          <DevelopmentServerPort>53350</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53350/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

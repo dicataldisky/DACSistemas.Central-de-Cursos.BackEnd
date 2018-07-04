@@ -3,7 +3,9 @@ using DACSistemas.Central_de_Cursos.BackEnd.Models;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using DACSistemas.Central_de_Cursos.BackEnd.Models.Enums;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Context
 {
@@ -16,6 +18,53 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.AutoDetectChangesEnabled = true;
             Database.SetInitializer<CentralDeCursosContext>(null);
+
+            // TODO: REMOVER - for teste pourposes
+            
+            //if (Database.CreateIfNotExists())
+            //{
+            //    this.Usuarios.Add(new Usuario()
+            //    {
+            //        Apagado = false,
+            //        Ativo = true,
+            //        CPF = "12342134124",
+            //        Celular = 321412341234,
+            //        DataCadastro = DateTime.Now,
+            //        DataNascimento = DateTime.Now,
+            //        DataUltAlteracao = DateTime.Now,
+            //        Email = "Aaoeaoe@aoeaoe.com",
+            //        Foto = "aoeaoe",
+            //        EstadoCivil = EstadoCivil.Solteiro,
+            //        Nome = "aoeuaouoau",
+            //        RG = "aoeuaoueo",
+            //        Senha = "123123",
+            //        Sexo = Sexo.Feminino,
+            //        Telefone = 123123123,
+            //        Token = "aoeuaoeuaoeu",
+            //        TelefoneEmergencia = 123123123,
+                    
+            //    });
+            //    this.Cursos.Add(new Curso()
+            //    {
+            //        Apagado = false,
+            //        CargaHoraria = 8,
+            //        DataCadastro = DateTime.Now,
+            //        DataUltAlteracao = DateTime.Now,
+            //        Descricao = "Teste",
+            //        FinalDeSemana = true,
+            //        Nome = "ADS"
+            //    });
+
+            //    this.UsuarioCursos.Add(new UsuarioCurso()
+            //    {
+            //        UsuarioID = 1,
+            //        CursoID = 1,
+            //        DataCadastro = DateTime.Now,
+            //        DataUltAlteracao = DateTime.Now,
+            //    });
+            //    this.SaveChanges();
+            //}
+            
         }
 
         // Entities
@@ -24,6 +73,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context
         public DbSet<Grupo> Grupos { get; set; }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Habilitacao> Habilitacoes { get; set; }
+        public DbSet<UsuarioCurso> UsuarioCursos { get; set; }
         public DbSet<Agenda> Agendas { get; set; }
 
         #region Auditoria 
@@ -33,11 +83,14 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             //Mappings
             modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new EnderecoMap());
             modelBuilder.Configurations.Add(new GrupoMap());
             modelBuilder.Configurations.Add(new CursoMap());
+            modelBuilder.Configurations.Add(new UsuarioCursoMap());
             modelBuilder.Configurations.Add(new HabilitacaoMap());
             modelBuilder.Configurations.Add(new AgendaMap());
 
