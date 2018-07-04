@@ -26,15 +26,11 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
 
         [Route("")]
         [HttpGet]
-        // TODO: Descomentar
-        //[Authorize]
+        [Authorize]
         // GET api/usuario
         public IHttpActionResult Get()
         {
-
-            var teste = new CentralDeCursosContext();
-            //var dados = _repository.Get(Convert.ToInt32(User.Identity.Name));
-            var dados = _repository.Get(1);
+            var dados = _repository.Get(Convert.ToInt32(User.Identity.Name));
             return Ok(dados);
         }
 
