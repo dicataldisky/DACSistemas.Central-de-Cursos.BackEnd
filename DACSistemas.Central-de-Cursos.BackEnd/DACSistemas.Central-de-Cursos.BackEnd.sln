@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DACSistemas.Central-de-Cursos.BackEnd", "DACSistemas.Central-de-Cursos.BackEnd.csproj", "{B9EBCED9-05C9-42EC-8019-D930B5220415}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EBCED9-05C9-42EC-8019-D930B5220415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EBCED9-05C9-42EC-8019-D930B5220415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EBCED9-05C9-42EC-8019-D930B5220415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EBCED9-05C9-42EC-8019-D930B5220415}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80F47007-6C5A-4887-9D97-F9E8F19EA614}
+	EndGlobalSection
+EndGlobal

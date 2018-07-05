@@ -28,5 +28,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
 
         // Virtual Properties
         public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Agenda> Agendas { get; set; }
     }
 }

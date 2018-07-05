@@ -51,7 +51,8 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                         Instrutor = g.Instrutor
                     }).ToList(),
                     Cursos = x.UsuarioCurso.Select(a => a.Curso).Select(c => new ListCursoViewModel
-                    {
+                    { 
+                        DataInclusao = x.UsuarioCurso.FirstOrDefault(a => a.CursoID == c.CursoID && a.UsuarioID == usuarioid).DataInclusao,
                         CursoID = c.CursoID,
                         Nome = c.Nome,
                         Descricao = c.Descricao,

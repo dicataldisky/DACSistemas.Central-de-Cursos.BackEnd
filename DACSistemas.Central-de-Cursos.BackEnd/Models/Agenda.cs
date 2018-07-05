@@ -7,24 +7,25 @@ using System.Web;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Models
 {
-    public class Agenda
+    public class Agenda : DataLog
     {
         // Primary Key
         public int AgendaID { get; set; }
 
 
-        public int CursoID { get; set; }
-        public virtual Curso Curso { get; set; }
-
-        public int InstrutorID { get; set; }
-        public virtual Usuario Usuario { get; set; }
-
-        public int EnderecoID { get; set; }
-        public virtual ICollection<Endereco> Endereco { get; set; }
 
         // Fields
+        public int CursoID { get; set; }
+        public int UsuarioID { get; set; }
+        public int EnderecoID { get; set; }
         public DateTime? Inicio { get; set; }
         public DateTime? Termino { get; set; }
+        
+        public Curso Curso { get; set; }
+        public Usuario Usuario { get; set; }
+        public Endereco Endereco { get; set; }
+
+
 
 
 

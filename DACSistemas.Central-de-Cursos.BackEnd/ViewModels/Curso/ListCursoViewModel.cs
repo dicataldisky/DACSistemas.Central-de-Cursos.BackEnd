@@ -10,6 +10,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.ViewModels
         public string Descricao { get; set; }
         public Int16 CargaHoraria  { get; set; }
         public bool FinalDeSemana { get; set; }
+        public DateTime? DataInclusao { get; set; }
 
     }
 }

@@ -192,12 +192,12 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
         [HttpGet]
         public IHttpActionResult Teste()
         {
-            var dados = _context.Agendas
-                .Include(x => x.Endereco)
-                .Include(b => b.Curso)
-                .Include(c => c.Usuario)
-                .ToList();
-            return Ok(dados);
+            //var dados = _context.Agendas
+            //    .Include(x => x.Endereco)
+            //    .Include(b => b.Curso)
+            //    .Include(c => c.Usuario)
+            //    .ToList();
+            return Ok();
         }
     }
 }

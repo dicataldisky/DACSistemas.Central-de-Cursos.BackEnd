@@ -22,13 +22,14 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                 .Select(x => new ListCursoPorUsuarioViewModel
                 {
                     UsuarioID = x.UsuarioID,
-                     Cursos = x.UsuarioCurso.Select(i => new ListCursoViewModel
+                     Cursos = x.UsuarioCurso.Select(a => a.Curso).Select(i => new ListCursoViewModel
                     {
+                         DataInclusao = x.UsuarioCurso.FirstOrDefault(a => a.CursoID == i.CursoID && a.UsuarioID == usuarioid).DataInclusao,
                          CursoID = i.CursoID,
-                         Nome = i.Curso.Nome,
-                         Descricao = i.Curso.Descricao,
-                         CargaHoraria = i.Curso.CargaHoraria,
-                         FinalDeSemana = i.Curso.FinalDeSemana,
+                         Nome = i.Nome,
+                         Descricao = i.Descricao,
+                         CargaHoraria = i.CargaHoraria,
+                         FinalDeSemana = i.FinalDeSemana,
                         }).ToList()
                 }).ToList()
                 .Where(w => w.UsuarioID == usuarioid)
