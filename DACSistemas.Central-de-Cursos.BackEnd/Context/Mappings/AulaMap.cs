@@ -17,7 +17,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
             // Properties
 
             // Table & Collumn Mappings
-            this.ToTable("Agenda");
+            this.ToTable("Aula");
             this.Property(u => u.AulaID).HasColumnName("AulaID");
             this.Property(u => u.AgendaID).HasColumnName("AgendaID");
             this.Property(u => u.UsuarioID).HasColumnName("UsuarioID");
@@ -26,8 +26,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
             // Relationships
             this.HasRequired(r => r.Usuario).WithMany(d => d.Aulas).HasForeignKey(fk => fk.UsuarioID);
             this.HasRequired(r => r.Agenda).WithMany(d => d.Aulas).HasForeignKey(fk => fk.AgendaID);
-
-            
         }
     }
 }
