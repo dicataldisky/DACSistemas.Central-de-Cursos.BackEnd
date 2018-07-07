@@ -1,9 +1,5 @@
 ﻿using DACSistemas.Central_de_Cursos.BackEnd.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Web;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
 {
@@ -11,6 +7,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
     {
         public AgendaMap()
         {
+
             // Primary Key
             this.HasKey(k => new { k.AgendaID, k.EnderecoID, k.UsuarioID, k.CursoID });
 
@@ -20,6 +17,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
             // Table & Collumn Mappings
             this.ToTable("Agenda");
             this.Property(u => u.AgendaID).HasColumnName("AgendaID");
+            this.Property(u => u.Descricao).HasColumnName("Descricao");
             this.Property(u => u.CursoID).HasColumnName("CursoID");
             this.Property(u => u.UsuarioID).HasColumnName("UsuarioID");
             this.Property(u => u.EnderecoID).HasColumnName("EnderecoID");
@@ -32,7 +30,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
             this.HasRequired(r => r.Endereco).WithMany(d => d.Agendas).HasForeignKey(fk => fk.EnderecoID);
             this.HasRequired(r => r.Usuario).WithMany(d => d.Agendas).HasForeignKey(fk => fk.UsuarioID);
             this.HasRequired(r => r.Curso).WithMany(d => d.Agendas).HasForeignKey(fk => fk.CursoID);
-
 
         }
     }

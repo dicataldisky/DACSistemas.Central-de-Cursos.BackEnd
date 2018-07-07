@@ -5,7 +5,6 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using DACSistemas.Central_de_Cursos.BackEnd.Models.Enums;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Context
 {
@@ -75,7 +74,8 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context
         public DbSet<Habilitacao> Habilitacoes { get; set; }
         public DbSet<UsuarioCurso> UsuarioCursos { get; set; }
         public DbSet<Agenda> Agendas { get; set; }
-
+        public DbSet<Aula> Aulas { get; set; }
+      
         #region Auditoria 
         public DbSet<Auditoria> Auditorias { get; set; }
         public DbSet<AuditoriaAlteracao> AuditoriaAlteracoes { get; set; }
@@ -93,7 +93,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context
             modelBuilder.Configurations.Add(new UsuarioCursoMap());
             modelBuilder.Configurations.Add(new HabilitacaoMap());
             modelBuilder.Configurations.Add(new AgendaMap());
-
+            modelBuilder.Configurations.Add(new AulaMap());
 
             #region Auditoria
             modelBuilder.Configurations.Add(new AuditoriaMap());

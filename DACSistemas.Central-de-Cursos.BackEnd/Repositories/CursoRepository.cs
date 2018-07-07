@@ -1,4 +1,5 @@
 ﻿using DACSistemas.Central_de_Cursos.BackEnd.Context;
+using DACSistemas.Central_de_Cursos.BackEnd.Models;
 using DACSistemas.Central_de_Cursos.BackEnd.ViewModels;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -35,6 +36,11 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                 .Where(w => w.UsuarioID == usuarioid)
                 .ToList();
             return data;
+        }
+
+        public Curso GetCurso(int cursoID)
+        {
+            return _context.Cursos.Find(cursoID);
         }
     }
 }

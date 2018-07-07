@@ -1,10 +1,12 @@
-﻿using DACSistemas.Central_de_Cursos.BackEnd.Repositories;
+﻿using DACSistemas.Central_de_Cursos.BackEnd.Context;
+using DACSistemas.Central_de_Cursos.BackEnd.Models;
+using DACSistemas.Central_de_Cursos.BackEnd.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Data.Entity;
+using System.Linq;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
 {
@@ -13,10 +15,12 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
     public class AgendaController : ApiController
     {
         private readonly AgendaRepository _repository;
+        private readonly CentralDeCursosContext _context;
 
         protected AgendaController()
         {
             _repository = new AgendaRepository();
+            _context = new CentralDeCursosContext();
         }
 
         [Route("")]
@@ -24,7 +28,16 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
         [Authorize]
         public IHttpActionResult Get()
         {
-            var dados = _repository.Get(Convert.ToInt32(User.Identity.Name));
+            int id = Convert.ToInt32(User.Identity.Name);
+
+            UsuarioCurso uc = new UsuarioCurso();
+            uc = _context.UsuarioCursos
+                .FirstOrDefault(x => x.UsuarioID == id);
+                
+                
+
+
+            var dados = _repository.Get(Convert.ToInt32(User.Identity.Name), uc.CursoID);
             return Ok(dados);
         }
 

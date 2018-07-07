@@ -1,10 +1,8 @@
 ﻿using DACSistemas.Central_de_Cursos.BackEnd.Context;
 using DACSistemas.Central_de_Cursos.BackEnd.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.Entity;
+using System.Linq;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
 {

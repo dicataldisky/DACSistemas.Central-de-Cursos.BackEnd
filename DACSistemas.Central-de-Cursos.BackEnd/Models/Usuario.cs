@@ -12,6 +12,8 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
             Grupos = new List<Grupo>();
             Habilitacoes = new List<Habilitacao>();
             Agendas = new List<Agenda>();
+            UsuarioCurso = new List<UsuarioCurso>();
+            Aulas = new List<Aula>();
         }
 
         // Primary key
@@ -39,9 +41,9 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
         // Virtual Properties
         public virtual ICollection<Endereco> Enderecos { get; set; }
         public virtual ICollection<Grupo> Grupos { get; set; }
-        
         public virtual ICollection<Habilitacao> Habilitacoes { get; set; }
         public virtual ICollection<Agenda> Agendas { get; set; }
         public virtual ICollection<UsuarioCurso> UsuarioCurso { get; set; }
+        public virtual ICollection<Aula> Aulas { get; set; }
     }
 }

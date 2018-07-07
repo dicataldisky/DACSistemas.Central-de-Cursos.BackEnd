@@ -32,7 +32,8 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models.OAuth
 
 
                 if (Usuario == null) { context.SetError("invalid_grant", "Usuário ou senha inválidos"); return; }
-               if (Usuario.Ativo == false) { context.SetError("not_activated", Usuario.Token); return; }
+                if (Usuario.Ativo == false) { context.SetError("not_activated", Usuario.Token); return; }
+                if (Usuario.UsuarioCurso.Count <= 0 ) { context.SetError("not_course", Usuario.Token); return; }
 
 
                 var identify = new ClaimsIdentity(context.Options.AuthenticationType);

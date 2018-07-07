@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Models
 {
     public class UsuarioCurso
     {
+        // Foreign Key
         public int UsuarioID { get; set; }
         public int CursoID { get; set; }
+
+        //Fields
         public DateTime DataInclusao { get; set; }
-        public Curso Curso { get; set; }
-        public Usuario Usuario { get; set; }
+
+        // Virtual Properties
+        public virtual Curso Curso { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

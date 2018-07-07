@@ -135,6 +135,7 @@
     <Compile Include="Context\Mappings\AgendaMap.cs" />
     <Compile Include="Context\Mappings\Auditoria\AuditoriaAlteracaoMap.cs" />
     <Compile Include="Context\Mappings\Auditoria\AuditoriaMap.cs" />
+    <Compile Include="Context\Mappings\AulaMap.cs" />
     <Compile Include="Context\Mappings\CursoMap.cs" />
     <Compile Include="Context\Mappings\EnderecoMap.cs" />
     <Compile Include="Context\Mappings\GrupoMap.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Context\Mappings\UsuarioMap.cs" />
     <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\GrupoController.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\Auditoria\AuditoriaAlteracao.cs" />
     <Compile Include="Models\Auditoria\Auditoria.cs" />
+    <Compile Include="Models\Aula.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Email\Enviador.cs" />
@@ -183,6 +186,7 @@
     <Compile Include="ViewModels\Agenda\ListAgendaPorUsuarioViewModel.cs" />
     <Compile Include="ViewModels\Agenda\ListAgendaViewModel.cs" />
     <Compile Include="ViewModels\Curso\ListCursoPorUsuarioViewModel.cs" />
+    <Compile Include="ViewModels\DashBoard\ListDashBoardViewModel.cs" />
     <Compile Include="ViewModels\Endereco\ListEnderecoPorUsuarioViewModel.cs" />
     <Compile Include="ViewModels\Grupo\ListGrupoPorUsuarioViewModel.cs" />
     <Compile Include="ViewModels\Curso\ListCursoViewModel.cs" />

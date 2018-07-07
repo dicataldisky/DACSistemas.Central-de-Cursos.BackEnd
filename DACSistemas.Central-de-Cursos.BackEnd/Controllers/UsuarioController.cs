@@ -6,8 +6,6 @@ using System;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Data.Entity;
-using DACSistemas.Central_de_Cursos.BackEnd.ViewModels;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
 {
@@ -61,7 +59,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Controllers
 
             try
             {
-                // Regra 4 - Cria novo Usuario  somente as propriedades permitidas
+                // Regra 4 - Cria novo Usuario somente as propriedades permitidas
                 var novoUsuario = new Usuario
                 {
                     Token = GenerateToken.GetNewToken(),

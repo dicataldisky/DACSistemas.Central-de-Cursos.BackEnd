@@ -2,9 +2,8 @@
 using DACSistemas.Central_de_Cursos.BackEnd.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.Entity;
+using System.Linq;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
 {
@@ -16,22 +15,47 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
         {
             _context = new CentralDeCursosContext();
         }
-
-        public IList<ListAgendaPorUsuarioViewModel> Get(int usuarioid)
+         //.Include(c => c.UsuarioCurso.Select(s => s.Curso))
+        public IList<ListAgendaPorUsuarioViewModel> Get(int usuarioid, int cursoid)
         {
             var data = _context.Usuarios
-                .Include(c => c.Agendas.Select(s => s.Endereco))
+                .Include(a => a.Agendas)
+                .Include(e => e.Enderecos)
+
                 .Select(x => new ListAgendaPorUsuarioViewModel
                 {
                     UsuarioID = x.UsuarioID,
-                    Agendas = x.Agendas.Select(a => a.Endereco).Select(i => new ListAgendaViewModel
+                    Agendas = x.Agendas.Where(w => w.CursoID == cursoid)
+                    .Select(lavm => new ListAgendaViewModel
                     {
-                        Endereco = x.Enderecos.FirstOrDefault(a => a.EnderecoID == i.EnderecoID),
-                    }).ToList()
+                        AgendaID = lavm.AgendaID,
+                        Curso = lavm.Curso.Nome,
+                        Descricao = lavm.Descricao,
+                        CEP = lavm.Endereco.CEP,
+                        Endereco = lavm.Endereco.Logradouro + ", " + lavm.Endereco.Numero + " - " + lavm.Endereco.Bairro + " - " + lavm.Endereco.Localidade,
+                        Inicio = lavm.Inicio,
+                        Termino = lavm.Termino,
+                        Instrutor = lavm.Usuario.Nome,
+                        //   AulaConfirmada = lavm.Confirmacoes.Count > 0
+                        //Aulas = lavm.Aulas.ToList()
+                       
+                   }).ToList(),
                     
-                }).ToList()
-                .Where(w => w.UsuarioID == usuarioid)
-                .ToList();
+                }).ToList();
+
+
+
+            //.Select(x => new ListAgendaPorUsuarioViewModel
+            //{
+            //    UsuarioID = x.UsuarioID,
+            //    Agendas = x.Agendas.Select(a => a.Endereco).Select(i => new ListAgendaViewModel
+            //    {
+            //        Endereco = x.Enderecos.FirstOrDefault(a => a.EnderecoID == i.EnderecoID),
+            //    }).ToList()
+
+            //}).ToList()
+            //.Where(w => w.UsuarioID == usuarioid)
+            //.ToList();
             return data;
         }
     }

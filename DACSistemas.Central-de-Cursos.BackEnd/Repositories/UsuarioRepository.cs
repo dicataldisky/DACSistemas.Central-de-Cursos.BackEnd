@@ -78,6 +78,8 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
         {
             senha = MD5PasswordEncryptor.MD5Hash(senha);
             var result = _context.Usuarios
+                .Include(e => e.Enderecos)
+                .Include(uc => uc.UsuarioCurso.Select(c => c.Curso))
                 .FirstOrDefault(u => u.Email == email && u.Senha == senha);
             return result;
         }
@@ -105,11 +107,20 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
             usuario.Foto = "profileblank.jpg";
             usuario.Senha = MD5PasswordEncryptor.MD5Hash(usuario.Senha);
 
+            //UsuarioCurso uc = new UsuarioCurso();
+            //uc.CursoID = 1;
+            //uc.DataInclusao = DateTime.Now;
+            //usuario.UsuarioCurso.Add(uc);
+
+            Grupo g = _context.Grupos.Find(3);
+            usuario.Grupos.Add(g);
+            
+
             _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
-                //_repository.SaveChanges(AuditoriaFactory.Create("Usuario.Cadastro"));
+            //_repository.SaveChanges(AuditoriaFactory.Create("Usuario.Cadastro"));
 
-                return usuario;
+            return usuario;
         }
 
         public Usuario Update(Usuario usuario)
