@@ -21,5 +21,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.ViewModels
         public List<ListGrupoViewModel> Grupos { get; set; }
         public List<ListCursoViewModel> Cursos { get; set; }
         public List<ListHabilitacaoViewModel> Habilitacoes { get; set; }
+
     }
 }

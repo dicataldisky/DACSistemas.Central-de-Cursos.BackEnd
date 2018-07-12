@@ -38,8 +38,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
                     .HasMaxLength(2)
                     .IsRequired();
 
-
-
             this.Property(u => u.CodGIA)
                     .HasMaxLength(11);
 
@@ -48,16 +46,16 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
 
             // Table & Collumn Mappings
             this.ToTable("Enderecos");
-            this.Property(u => u.CEP).HasColumnName("CEP");
-            this.Property(u => u.Logradouro).HasColumnName("Logradouro");
-            this.Property(u => u.Numero).HasColumnName("Numero");
-            this.Property(u => u.Complemento).HasColumnName("Complemento");
-            this.Property(u => u.Bairro).HasColumnName("Bairro");
-            this.Property(u => u.Localidade).HasColumnName("Localidade");
-            this.Property(u => u.UF).HasColumnName("UF");
-            this.Property(u => u.CodIBGE).HasColumnName("CodIBGE");
-            this.Property(u => u.CodGIA).HasColumnName("CodGIA");
-            this.Property(u => u.Apagado).HasColumnName("Apagado");
+            this.Property(e => e.CEP).HasColumnName("CEP");
+            this.Property(e => e.Logradouro).HasColumnName("Logradouro");
+            this.Property(e => e.Numero).HasColumnName("Numero");
+            this.Property(e => e.Complemento).HasColumnName("Complemento");
+            this.Property(e => e.Bairro).HasColumnName("Bairro");
+            this.Property(e => e.Localidade).HasColumnName("Localidade");
+            this.Property(e => e.UF).HasColumnName("UF");
+            this.Property(e => e.CodIBGE).HasColumnName("CodIBGE");
+            this.Property(e => e.CodGIA).HasColumnName("CodGIA");
+            this.Property(e => e.Apagado).HasColumnName("Apagado");
 
             // Relationships
         }

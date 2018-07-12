@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace DACSistemas.Central_de_Cursos.BackEnd.Models
@@ -12,7 +11,6 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Models
         }
         // Primary Key
         public int? AgendaID { get; set; }
-
 
         // Fields
         public int CursoID { get; set; }

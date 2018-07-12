@@ -155,6 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agenda.cs" />
     <Compile Include="Models\Auditoria\AuditoriaAlteracao.cs" />
     <Compile Include="Models\Auditoria\Auditoria.cs" />
@@ -185,6 +186,8 @@
     <Compile Include="Utils\TrimString.cs" />
     <Compile Include="ViewModels\Agenda\ListAgendaPorUsuarioViewModel.cs" />
     <Compile Include="ViewModels\Agenda\ListAgendaViewModel.cs" />
+    <Compile Include="ViewModels\Aula\ListAulaPorUsuarioViewModel.cs" />
+    <Compile Include="ViewModels\Aula\ListAulaViewModel.cs" />
     <Compile Include="ViewModels\Curso\ListCursoPorUsuarioViewModel.cs" />
     <Compile Include="ViewModels\DashBoard\ListDashBoardViewModel.cs" />
     <Compile Include="ViewModels\Endereco\ListEnderecoPorUsuarioViewModel.cs" />

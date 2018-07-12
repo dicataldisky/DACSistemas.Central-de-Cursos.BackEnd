@@ -17,9 +17,9 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
 
             // Table & Collumn Mappings
             this.ToTable("Grupos");
-            this.Property(u => u.Descricao).HasColumnName("Descricao");
-            this.Property(u => u.Instrutor).HasColumnName("Instrutor");
-            this.Property(u => u.Apagado).HasColumnName("Apagado");
+            this.Property(g => g.Descricao).HasColumnName("Descricao");
+            this.Property(g => g.Instrutor).HasColumnName("Instrutor");
+            this.Property(g => g.Apagado).HasColumnName("Apagado");
 
             // Relationships
         }

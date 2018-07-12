@@ -7,20 +7,20 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
     {
         public UsuarioCursoMap()
         {
-            this.ToTable("Usuario_Cursos");
             // Primary Key
             this.HasKey(k => new { k.UsuarioID, k.CursoID});
 
             // Properties
-            this.Property(u => u.CursoID).HasColumnName("CursoID");
-            this.Property(u => u.UsuarioID).HasColumnName("UsuarioID");
-            this.Property(u => u.DataInclusao).HasColumnName("DataInclusao");
+            this.Property(uc => uc.CursoID).HasColumnName("CursoID");
+            this.Property(uc => uc.UsuarioID).HasColumnName("UsuarioID");
+            this.Property(uc => uc.DataInclusao).HasColumnName("DataInclusao");
 
             // Table & Collumn Mappings
+            this.ToTable("Usuario_Cursos");
+
+            // Relationships
             this.HasRequired(r => r.Curso).WithMany(d => d.UsuarioCurso).HasForeignKey(fk => fk.CursoID);
             this.HasRequired(r => r.Usuario).WithMany(d => d.UsuarioCurso).HasForeignKey(fk => fk.UsuarioID);
-
-
         }
     }
 }

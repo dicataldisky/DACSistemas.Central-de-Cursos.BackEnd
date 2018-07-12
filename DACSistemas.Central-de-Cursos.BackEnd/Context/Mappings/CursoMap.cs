@@ -11,21 +11,20 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
             this.HasKey(e => e.CursoID);
 
             // Properties
-            this.Property(u => u.Nome)
+            this.Property(u => u.Titulo)
                     .HasMaxLength(150)
                     .IsRequired();
 
             this.Property(u => u.Descricao)
                     .HasMaxLength(250);
 
-
             // Table & Collumn Mappings
             this.ToTable("Cursos");
-            this.Property(u => u.Nome).HasColumnName("Nome");
-            this.Property(u => u.Descricao).HasColumnName("Descricao");
-            this.Property(u => u.CargaHoraria).HasColumnName("CargaHoraria");
-            this.Property(u => u.FinalDeSemana).HasColumnName("FinalDeSemana");
-            this.Property(u => u.Apagado).HasColumnName("Apagado");
+            this.Property(c => c.Titulo).HasColumnName("Nome");
+            this.Property(c => c.Descricao).HasColumnName("Descricao");
+            this.Property(c => c.CargaHoraria).HasColumnName("CargaHoraria");
+            this.Property(c => c.FinalDeSemana).HasColumnName("FinalDeSemana");
+            this.Property(c => c.Apagado).HasColumnName("Apagado");
 
             // Relationships
         }

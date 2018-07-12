@@ -54,7 +54,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                     { 
                         DataInclusao = x.UsuarioCurso.FirstOrDefault(a => a.CursoID == c.CursoID && a.UsuarioID == usuarioid).DataInclusao,
                         CursoID = c.CursoID,
-                        Nome = c.Nome,
+                        Nome = c.Titulo,
                         Descricao = c.Descricao,
                         CargaHoraria = c.CargaHoraria,
                         FinalDeSemana = c.FinalDeSemana

@@ -17,11 +17,11 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Context.Mappings
 
             // Table & Collumn Mappings
             this.ToTable("Habilitacoes");
-            this.Property(u => u.HabilitacaoID).HasColumnName("HabilitacaoID");
-            this.Property(u => u.Associacao).HasColumnName("Associacao");
-            this.Property(u => u.Nivel).HasColumnName("Nivel");
-            this.Property(u => u.DataDeFiliacao).HasColumnName("Filiacao");
-            this.Property(u => u.Apagado).HasColumnName("Apagado");
+            this.Property(h => h.HabilitacaoID).HasColumnName("HabilitacaoID");
+            this.Property(h => h.Associacao).HasColumnName("Associacao");
+            this.Property(h => h.Nivel).HasColumnName("Nivel");
+            this.Property(h => h.DataDeFiliacao).HasColumnName("Filiacao");
+            this.Property(h => h.Apagado).HasColumnName("Apagado");
 
             // Relationships
         }

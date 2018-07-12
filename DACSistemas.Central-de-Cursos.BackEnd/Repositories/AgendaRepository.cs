@@ -29,7 +29,7 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                     .Select(lavm => new ListAgendaViewModel
                     {
                         AgendaID = lavm.AgendaID,
-                        Curso = lavm.Curso.Nome,
+                        //Curso = lavm.Curso.Titulo,
                         Descricao = lavm.Descricao,
                         CEP = lavm.Endereco.CEP,
                         Endereco = lavm.Endereco.Logradouro + ", " + lavm.Endereco.Numero + " - " + lavm.Endereco.Bairro + " - " + lavm.Endereco.Localidade,
@@ -37,7 +37,14 @@ namespace DACSistemas.Central_de_Cursos.BackEnd.Repositories
                         Termino = lavm.Termino,
                         Instrutor = lavm.Usuario.Nome,
                         //   AulaConfirmada = lavm.Confirmacoes.Count > 0
-                        //Aulas = lavm.Aulas.ToList()
+                        Aulas = lavm.Aulas.Select(vm => new ListAulaViewModel {
+                            AulaID = vm.AulaID,
+                           // UsuarioID = vm.UsuarioID,
+                          //  Aluno = vm.Usuario.Nome,
+                            Entrada = vm.Entrada,
+                            Saida = vm.Saida,
+                            Observacao = vm.Observacao
+                        }).ToList()
                        
                    }).ToList(),
                     
